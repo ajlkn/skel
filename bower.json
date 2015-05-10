@@ -1,0 +1,10 @@
+{
+	"name": "skel",
+	"version": "3.0.0-dev",
+	"description": "A lightweight responsive framework for the www.",
+	"keywords": [ "framework", "responsive", "grid", "skeljs" ],
+	"homepage": "http://skel.io",
+	"license": "MIT",
+	"ignore": [ ],
+	"main": "./src/skel.js"
+}
