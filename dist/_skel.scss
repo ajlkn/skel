@@ -337,6 +337,11 @@
 					margin-right: auto;
 				}
 
+				// Use default is $containers is just "true".
+					@if $containers == true {
+						$containers: 960px;
+					}
+
 				// Apply base.
 					@include containers($containers);
 
