@@ -153,7 +153,7 @@ The Layout component of Skel.scss is a pure Sass implementation of Skel's Layout
 @include skel-layout((
 	reset: "normalize",
 	grid: true,
-	containers: 960px
+	containers: true
 ));
 ```
 
@@ -161,7 +161,7 @@ Enable the following features:
 
 - Resets (using **Normalize.css**)
 - Grid system (with the default `40px` column gutters)
-- Containers (at `960px`)
+- Containers (at the default `960px`)
 
 You can also override your default `grid` and `containers` options at a breakpoint level, which allows you to, for example, set `containers` to one value at your `medium` breakpoint, and another at your `small` breakpoint. To do this, first define your breakpoints with `skel.breakpoints()`:
 
@@ -180,7 +180,7 @@ Then use `skel-layout()` to turn on your features, only this time with the `brea
 ```sass
 @include skel-layout((
 	reset: "normalize",
-	containers: 960px,
+	containers: true,
 	grid: true,
 	breakpoints: (
 		medium: (
@@ -201,7 +201,7 @@ This, like before, results in the following by default:
 
 - Resets (using **Normalize.css**)
 - Grid system (with the default `40px` column gutters)
-- Containers (at `960px`)
+- Containers (at the default `960px`)
 
 But since there are now breakpoint-level overrides set for `grid` and `containers`, when `medium` is active you get:
 
@@ -271,11 +271,11 @@ Which is fine on smaller screens, but on larger ones it makes lines of text so l
 +-----------------------------------------------------+
 ```
 
-Layout will automatically generate a `container` class when its `containers` option* is set to a valid CSS measurement value (eg. `960`, `"960px"`, `"60em"`, `"75%"`, `"30vw"`). For example, the following sets up the `container` class at `960px`:
+Layout will automatically generate a `container` class when its `containers` option* is set to true (which uses the default size of `960px`), or a valid CSS measurement value (eg. `960`, `"960px"`, `"60em"`, `"75%"`, `"30vw"`). For example, the following sets up the `container` class at `1140px`:
 
 ```sass
 @include skel-layout((
-	containers: 960px
+	containers: 1140px
 ));
 ```
 

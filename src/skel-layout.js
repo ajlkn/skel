@@ -251,7 +251,16 @@
 
 				__.config.breakpoints = c;
 
-			// Grid fixes.
+			// Containers.
+				if (__.config.containers) {
+
+					// Apply defaults if value is just 'true'.
+						if (__.config.containers === true)
+							__.config.containers = 960;
+
+				}
+
+			// Grid.
 				if (__.config.grid) {
 
 					// Apply defaults if value is just 'true'.
