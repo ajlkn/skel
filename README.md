@@ -40,7 +40,7 @@ Previous versions of Skel were basically monolithic (ie. `skel.min.js` contained
 - UMD Wrapper (http://github.com/umdjs/umd/blob/master/returnExports.js | @umdjs + @nason)
 - CSS Resets (http://meyerweb.com/eric/tools/css/reset | Eric Meyer | Public domain)
 - Normalize (http://necolas.github.io/normalize.css | Nicolas Gallagher, Jonathan Neal | MIT License)
-- Functions `val()` and `str-replace()` based on code by Hugo Giraudel (http://hugogiraudel.com | @hugogiraudel)
+- Various Sass functions by Hugo Giraudel (http://hugogiraudel.com | @hugogiraudel)
 
 
 ## License
