@@ -320,8 +320,31 @@ var skel = (function() { "use strict"; var _ = {
 
 					Breakpoint.prototype.sync = function() {
 
-						this.wasActive = this.active;
-						this.active = _.matchesMedia(this.media);
+						// Media query matches ...
+							if (_.matchesMedia(this.media)) {
+
+								// ... but breakpoint is already active? Bail.
+									if (this.active)
+										return;
+
+								// ... otherwise, sync.
+									this.wasActive = false;
+									this.active = true;
+
+							}
+
+						// Media query doesn't match ...
+							else {
+
+								// ... but breakpoint isn't active anyway? Bail.
+									if (!this.active)
+										return;
+
+								// ... otherwise, sync.
+									this.wasActive = true;
+									this.active = false;
+
+							}
 
 					};
 
