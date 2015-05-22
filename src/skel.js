@@ -318,33 +318,14 @@ var skel = (function() { "use strict"; var _ = {
 
 				};
 
+					Breakpoint.prototype.matches = function() {
+						return (_.matchesMedia(this.media));
+					};
+
 					Breakpoint.prototype.sync = function() {
 
-						// Media query matches ...
-							if (_.matchesMedia(this.media)) {
-
-								// ... but breakpoint is already active? Bail.
-									if (this.active)
-										return;
-
-								// ... otherwise, sync.
-									this.wasActive = false;
-									this.active = true;
-
-							}
-
-						// Media query doesn't match ...
-							else {
-
-								// ... but breakpoint isn't active anyway? Bail.
-									if (!this.active)
-										return;
-
-								// ... otherwise, sync.
-									this.wasActive = true;
-									this.active = false;
-
-							}
+						this.wasActive = this.active;
+						this.active = this.matches();
 
 					};
 
@@ -403,16 +384,21 @@ var skel = (function() { "use strict"; var _ = {
 		 */
 		changeState: function(newStateId) {
 
-			// 1. Set last state var.
+			// Sync all breakpoints.
+				_.iterate(_.obj.breakpoints, function(id) {
+					_.obj.breakpoints[id].sync();
+				});
+
+			// Set last state var.
 				_.vars.lastStateId = _.stateId;
 
-			// 2. Change state ID.
+			// Change state ID.
 				_.stateId = newStateId;
 				_.breakpointIds = (_.stateId === _.sd ? [] : _.stateId.substring(1).split(_.sd));
 
 				console.log('[skel] changing states (id: "' + _.stateId + '")');
 
-			// 3. Get state.
+			// Get state.
 				if (!_.obj.states[_.stateId]) {
 
 					console.log('[skel] - not found. building ...');
@@ -437,20 +423,20 @@ var skel = (function() { "use strict"; var _ = {
 
 				}
 
-			// X. Detach all attachments *EXCEPT* state's.
+			// Detach all attachments *EXCEPT* state's.
 				_.detachAll(_.state.attachments);
 
-			// X. Attach state's attachments.
+			// Attach state's attachments.
 				_.attachAll(_.state.attachments);
 
-			// 4. Expose state and stateId as vars.
+			// Expose state and stateId as vars.
 				_.vars.stateId = _.stateId;
 				_.vars.state = _.state;
 
-			// 5. Trigger change event.
+			// Trigger change event.
 				_.trigger('change');
 
-			// 6. Trigger activate/deactivate events.
+			// Trigger activate/deactivate events.
 				_.iterate(_.obj.breakpoints, function(id) {
 
 					// Breakpoint is now active ...
@@ -509,11 +495,8 @@ var skel = (function() { "use strict"; var _ = {
 
 				var b = _.obj.breakpoints[id];
 
-				// Sync breakpoint.
-					b.sync();
-
 				// Active? Append breakpoint ID to state ID.
-					if (b.active)
+					if (b.matches())
 						stateId += _.sd + b.id;
 
 			});
