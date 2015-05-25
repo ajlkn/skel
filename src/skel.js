@@ -235,23 +235,40 @@ var skel = (function() { "use strict"; var _ = {
 
 							}
 
-						// Activate.
-							else if (name.charAt(0) == '+' && _.obj.breakpoints[name.substring(1)].active) {
+						// Activate / Not.
+							else {
 
-								// Trigger event.
-									(f)();
+								var x = name.charAt(0);
 
-							}
+								if (x == '+' || x == '!') {
 
-						// Not.
-							else if (name.charAt(0) == '!' && !_.obj.breakpoints[name.substring(1)].active) {
+									var y = name.substring(1);
 
-								// Trigger event.
-									(f)();
+									if (y in _.obj.breakpoints) {
 
-								// This only gets called once, so there's no need to actually
-								// register it.
-									return;
+										// Activate.
+											if (x == '+' && _.obj.breakpoints[y].active) {
+
+												// Trigger event.
+													(f)();
+
+											}
+
+										// Not.
+											else if (x == '!' && !_.obj.breakpoints[y].active) {
+
+												// Trigger event.
+													(f)();
+
+												// This only gets called once, so there's no need to actually
+												// register it.
+													return;
+
+											}
+
+									}
+
+								}
 
 							}
 
