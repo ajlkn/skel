@@ -174,18 +174,35 @@
 
 	/// Wraps @content in a @media block using a given breakpoint.
 	/// @param {string} $breakpoint Breakpoint.
-	@mixin breakpoint($breakpoint) {
+	/// @param {map} $queries Additional queries.
+	@mixin breakpoint($breakpoint: null, $queries: null) {
 
-		@if map-has-key($breakpoints, $breakpoint) {
+		$query: 'screen';
 
-	        $value: map-get($breakpoints, $breakpoint);
+		// Breakpoint.
+			@if $breakpoint and map-has-key($breakpoints, $breakpoint) {
+				$query: $query + ' and ' + map-get($breakpoints, $breakpoint);
+			}
 
-	        @media screen and #{$value} {
-	            @content;
-	        }
+		// Queries.
+			@if $queries {
+				@each $k, $v in $queries {
+					$query: $query + ' and (' + $k + ':' + $v + ')';
+				}
+			}
 
-	    }
+        @media #{$query} {
+            @content;
+        }
 
+	}
+
+	/// Wraps @content in a @media block targeting a specific orientation.
+	/// @param {string} $orientation Orientation.
+	@mixin orientation($orientation) {
+		@media screen and (orientation: #{$orientation}) {
+			@content;
+		}
 	}
 
 	/// Utility mixin for containers.

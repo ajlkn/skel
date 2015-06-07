@@ -864,6 +864,55 @@ Skel.scss also includes a handful of mixins to make life just a bit easier:
 	}
 	```
 
+- `orientation(string $orientation)`
+
+	Generates a `@media` block targeting a specific device orientation (`portrait` or `landscape`). For example this:
+
+	```sass
+	@include orientation(portrait) {
+		/* styles for portrait */
+	}
+	```
+
+	Compiles to the following CSS:
+
+	```sass
+	@media screen and (orientation: portrait) {
+		/* styles for portrait */
+	}
+	```
+
+	You can also nest the `orientation()` mixin with a `breakpoint()` mixin. For example, this):
+
+	```sass
+	@include skel-breakpoints((
+		xlarge: "(max-width: 1680px)",
+		large:  "(max-width: 1280px)",
+		medium: "(max-width: 980px)",
+		small:  "(max-width: 736px)",
+		xsmall: "(max-width: 480px)"
+	));
+
+	@include breakpoint(small) {
+		/* styles for "small" */
+
+		@include orientation(portrait) {
+			/* styles for portrait */
+		}
+	}
+	```
+
+	Compiles to the following CSS:
+
+	```sass
+	@media screen (max-width: 736px) {
+		/* styles for "small" */
+	}
+
+	@media screen (max-width: 736px) and (orientation: portrait) {
+		/* styles for "small" + portrait */
+	}
+	```
 
 ## Credits
 
