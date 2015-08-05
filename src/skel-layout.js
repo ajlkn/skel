@@ -320,7 +320,7 @@
 
 				// Box model.
 					if (__.config.boxModel)
-						s += __.css.bm.replace('&', __.config.boxModel);
+						s += __.css.bm.split('&').join(__.config.boxModel);
 
 				// Grid.
 					if (__.config.grid)
