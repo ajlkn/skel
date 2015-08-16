@@ -794,7 +794,7 @@ var skel = (function() { "use strict"; var _ = {
 
 							var i, k = Object.keys(a);
 
-							for (i=0; k[i]; i++) {
+							for (i = 0; k[i]; i++) {
 
 								if ((f)(k[i], a[k[i]]) === false)
 									break;
@@ -884,12 +884,12 @@ var skel = (function() { "use strict"; var _ = {
 									return true;
 
 							// Parse query.
-								var s, a, b, values = { 'min-width': null, 'max-width': null },
+								var k, s, a, b, values = { 'min-width': null, 'max-width': null },
 									found = false;
 
 								a = query.split(/\s+and\s+/);
 
-								for (var k = 0; k < a.length; k++) {
+								for (k = 0; k < a.length; k++) {
 
 									s = a[k];
 
