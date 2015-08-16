@@ -1,4 +1,4 @@
-/* skel-viewport.js v3.0.0-dev | (c) n33 | skel.io | MIT licensed */
+/* skel-viewport.js v3.0.0 | (c) n33 | skel.io | MIT licensed */
 
 (function(_) { "use strict"; var __ = {
 

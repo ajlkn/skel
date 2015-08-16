@@ -7,8 +7,6 @@ Skel is a lightweight framework for building responsive sites and web apps.
 - Unminified sources: [`src/`](src/)
 - Baseline, a simple boilerplate built on Skel + Skel.scss: [github.com/n33/baseline](http://github.com/n33/baseline)
 
-Note: This version of Skel is still in active development. It's currently stable enough for use in production, but please keep an eye out for bugs/general weirdness (as well as any features I should probably implement prior to an official release).
-
 _(Looking for the previous version of Skel? Go here: [github.com/n33/skel.old](http://github.com/n33/skel.old))_
 
 
