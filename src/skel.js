@@ -884,12 +884,12 @@ var skel = (function() { "use strict"; var _ = {
 									return true;
 
 							// Parse query.
-								var s, a, b, k, values = { 'min-width': null, 'max-width': null },
+								var s, a, b, values = { 'min-width': null, 'max-width': null },
 									found = false;
 
 								a = query.split(/\s+and\s+/);
 
-								for (k in a) {
+								for (var k = 0; k < a.length; k++) {
 
 									s = a[k];
 
