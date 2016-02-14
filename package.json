@@ -1,0 +1,12 @@
+{
+  "name": "skel-framework",
+  "version": "3.0.0",
+  "description": "A lightweight responsive framework for the www.",
+  "keywords": [ "framework", "responsive", "grid", "skeljs" ],
+  "homepage": "http://skel.io",
+  "repository": { "type": "git",
+                  "url": "https://github.com/n33/skel"
+                },
+  "license": "MIT",
+  "main": "./src/skel.js"
+}
