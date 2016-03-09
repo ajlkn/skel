@@ -989,9 +989,9 @@ var skel = (function() { "use strict"; var _ = {
 				a = [
 					['ios',			/([0-9_]+) like Mac OS X/,			function(v) { return v.replace('_', '.').replace('_', ''); }],
 					['ios',			/CPU like Mac OS X/,				function(v) { return 0 }],
+					['wp',			/Windows Phone ([0-9\.]+)/,			null],
 					['android',		/Android ([0-9\.]+)/,				null],
 					['mac',			/Macintosh.+Mac OS X ([0-9_]+)/,	function(v) { return v.replace('_', '.').replace('_', ''); }],
-					['wp',			/Windows Phone ([0-9\.]+)/,			null],
 					['windows',		/Windows NT ([0-9\.]+)/,			null],
 					['bb',			/BlackBerry.+Version\/([0-9\.]+)/,	null],
 					['bb',			/BB[0-9]+.+Version\/([0-9\.]+)/,	null]
