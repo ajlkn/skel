@@ -5,7 +5,7 @@
   "keywords": [ "framework", "responsive", "grid", "skeljs" ],
   "homepage": "http://skel.io",
   "repository": { "type": "git",
-                  "url": "https://github.com/n33/skel"
+                  "url": "https://github.com/ajlkn/skel"
                 },
   "license": "MIT",
   "main": "./src/skel.js"

@@ -1,4 +1,4 @@
-/* skel-layout.js v3.0.1-dev | (c) n33 | skel.io | MIT licensed */
+/* skel-layout.js v3.0.1-dev | (c) skel.io | MIT licensed */
 
 (function(_) { "use strict"; var __ = {
 

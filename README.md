@@ -5,9 +5,9 @@ Skel is a lightweight framework for building responsive sites and web apps.
 - Minified production versions: [`dist/`](dist/)
 - Documentation: [Skel](docs/skel.md), [Layout](docs/skel-layout.md), [Viewport](docs/skel-viewport.md), and [Skel.scss](docs/skel.scss.md)
 - Unminified sources: [`src/`](src/)
-- Baseline, a simple boilerplate built on Skel + Skel.scss: [github.com/n33/baseline](http://github.com/n33/baseline)
+- Baseline, a simple boilerplate built on Skel + Skel.scss: [github.com/ajlkn/baseline](http://github.com/ajlkn/baseline)
 
-_(Looking for the previous version of Skel? Go here: [github.com/n33/skel.old](http://github.com/n33/skel.old))_
+_(Looking for the previous version of Skel? Go here: [github.com/ajlkn/skel.old](http://github.com/ajlkn/skel.old))_
 
 
 ## Modules
@@ -45,7 +45,7 @@ Previous versions of Skel were basically monolithic (ie. `skel.min.js` contained
 
 Skel, Layout, Viewport, and Skel.scss are released under the MIT license.
 
-Copyright (c) n33
+Copyright (c) skel.io
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
