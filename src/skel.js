@@ -1,4 +1,4 @@
-/* skel.js v3.0.1-dev | (c) skel.io | MIT licensed */
+/* skel.js v3.0.1 | (c) skel.io | MIT licensed */
 
 var skel = (function() { "use strict"; var _ = {
 
