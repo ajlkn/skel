@@ -36,7 +36,7 @@ skel
 
 		/* do DOM ready stuff */
 
-		if (skel.breakpoints("small").active) {
+		if (skel.breakpoint("small").active) {
 			/* do something specific for small displays */
 		}
 
