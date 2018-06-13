@@ -1,5 +1,7 @@
 # Skel
 
+_**DEPRECATED! Use [Responsive Tools](https://github.com/ajlkn/responsive-tools) instead thx**_
+
 Skel is a lightweight framework for building responsive sites and web apps.
 
 - Minified production versions: [`dist/`](dist/)
